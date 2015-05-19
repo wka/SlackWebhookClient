@@ -2,9 +2,6 @@
 //  SlackWebhookClient.swift
 //  SlackTest
 //
-//  Created by Kris Arnold on 2/15/15.
-//  Copyright (c) 2015 World Airmail Links. All rights reserved.
-//
 
 import Foundation
 import CoreFoundation
@@ -247,36 +244,3 @@ private extension UIColor
     return String(format: "#%02x%02x%02x", Int(rgbComponents.red * 255), Int(rgbComponents.green * 255), Int(rgbComponents.blue * 255))
   }
 }
-
-
-
-/* TODO
-  x change paramDictType to String:String
-  no prepend # to channel if missing (channel can be an id, which does not start with #)
-  x pre- and post-pend : to iconEmoji if missing
-  x connection is lost error
-  x toDictionary private method
-  x completionHandler for sending message
-  - message class
-    - convenience sendMessage method
-  - attachment class
-    x logic for serializing UIColor
-    x logic for serializing NSURLs
-    x logic for serializing fields
-      x logic for determining "short"-ness for fields
-    x convenience sendAttachment method
-  x typedef for completionHandler
-  x factor out NSURLSession-sending code
-  - tests!
-    x test that iconURL converts to string successfully
-    x test SlackAttachmentField.toDict
-    x test SlackAttachment.toDict
-    x test messageParamtersToDictionary
-    x test that correct URL is called
-    x test that callback is called correctly for success of sendMessage
-    x test that callback is called correctly for server failure of sendMessage
-    x test that callback is called correctly for network failure of sendMessage
-    x test that callback is called correctly for successful sendAttachment
-    x test that callback is called correctly for failed sendAttachment
-
-*/
